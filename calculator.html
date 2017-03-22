@@ -1,0 +1,26 @@
+﻿<html>
+<body>
+<h1>Calculator</h1>
+<p>Calculator</p>
+
+<form name="calcForm"  onsubmit='return calculate(a.value, b.value, c.value)'>
+  Put your birth date MM:DD:YYYY here :<br>
+  <input type="number" id="a" name="month">
+  <input type="number" id="b" name="day">
+  <input type="number" id="c" name="year">
+  <input type="submit" name="submit"><br>
+  Answer:<br>
+  <output type="text" id="answer" name="answer">0</output><br>
+</form>
+
+<script>
+function calculate(a, b, c) {
+	var days = (new Date() - new Date(parseInt(c), parseInt(b), parseInt(a))) / (1000 * 60 * 60 * 24);
+	document.getElementById("answer").value = days;
+	return false;
+}	
+</script>
+<br>
+<p><a href="index.html">main</a><br></p>
+</body>
+</html>
